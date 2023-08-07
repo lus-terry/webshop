@@ -15,6 +15,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "Your password is required"],
   },
+  role: {
+    type: Number,
+    default: 0, // Defaultna vrijednost za role postavljena na 0
+  },
   createdAt: {
     type: Date,
     default: new Date(),

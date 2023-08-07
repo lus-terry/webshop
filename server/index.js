@@ -1,10 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require('cors');
+const cors = require("cors");
 const app = express();
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const authRoute = require("./Routes/AuthRoute");
+const { userVerification } = require("./Middlewares/AuthMiddleware");
 
 dotenv.config();
 
@@ -23,17 +24,20 @@ app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
 
-
-
-const corsOptions ={
-  origin:'http://localhost:4000', 
+const corsOptions = {
+  origin: "http://localhost:4000",
   methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials:true,            //access-control-allow-credentials:true
-}
+  credentials: true,
+};
 app.use(cors(corsOptions));
-
 
 app.use(cookieParser());
 app.use(express.json());
+
+// KORISTI userVerification KAO SREDNJI SLOJ (MIDDLEWARE) ZA ZAŠTITU RUTE /admin
+app.get("/admin", userVerification, (req, res) => {
+  // Ovdje dodajte logiku za admin panel
+  res.json({ message: "Admin panel" });
+});
 
 app.use("/", authRoute);

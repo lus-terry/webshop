@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import '../index.css';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -38,11 +39,17 @@ const Login = () => {
         { withCredentials: true }
       );
       console.log(data);
-      const { success, message } = data;
+      const { success, message, role } = data; 
+      
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          navigate("/");
+      
+          if (role) {
+            navigate("/admin"); 
+          } else {
+            navigate("/");
+          }
         }, 1000);
       } else {
         handleError(message);
