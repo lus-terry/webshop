@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HamburgerMenuIcon = ({ width = 24, height = 25, color = 'currentColor' }) => {
+const HamburgerMenuIcon = ({ width = 24, height = 25, color = "black" }) => {
   const iconStyle = {
     width: `${width}px`,
     height: `${height}px`,

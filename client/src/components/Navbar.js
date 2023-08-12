@@ -6,6 +6,7 @@ import FavouritesIcon from './FavouritesIcon';
 import CartIcon from './CartIcon';
 import SmallIcons from './SmallIcons';
 import HamburgerMenuIcon from './HamburgerMenuIcon';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -15,11 +16,15 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-blue-500 p-1 fixed top-0 left-0 w-full h-20">
-      <div className="flex items-center justify-between h-full  mx-auto px-10 relative">
-
-        <div className="text-white font-bold text-xl">Logo</div>
-
+    <nav id="navbar" className="bg-efefef  p-1 fixed top-0 left-0 w-full h-20">
+      <div className="flex items-center justify-between  mx-auto  px-10 relative">
+        <Link to="/"  >
+          <img
+            className="h-20 pt-4 "
+            src="https://res.cloudinary.com/dnqsbxztj/image/upload/v1691533047/InSylvis/logo_ixz1hi.png"
+            alt="logo"
+          />
+        </Link>
         <div className='flex flex-col'>
 
             <div className="hidden md:flex ml-auto py-2">
@@ -28,21 +33,21 @@ const Navbar = () => {
 
                 {/* Full Menu - shown on big screen */}
             <div className="hidden md:flex   bottom-1 top-auto ">
-            <ul className="flex space-x-4 text-sm">
+            <ul className="flex space-x-10 text-sm">
                 <li>
-                <a href="#" className="text-white hover:text-blue-300">ABOUT US</a>
+                    <Link to="/" className="text-black hover:text-blue-300">ABOUT US</Link>
                 </li>
                 <li>
-                <a href="#" className="text-white hover:text-blue-300">SHOP</a>
+                    <Link to="/" className="text-black hover:text-blue-300">SHOP</Link>
                 </li>
                 <li>
-                <a href="#" className="text-white hover:text-blue-300">VISIT</a>
+                    <Link to="/" className="text-black hover:text-blue-300">VISIT</Link>
                 </li>
                 <li>
-                <a href="#" className="text-white hover:text-blue-300">GALLERY</a>
+                    <Link to="/" className="text-black hover:text-blue-300">GALLERY</Link>
                 </li>
                 <li>
-                <a href="#" className="text-white hover:text-blue-300">CONTACT</a>
+                    <Link to="/" className="text-black hover:text-blue-300">CONTACT</Link>
                 </li>
             </ul>
             </div>
@@ -78,21 +83,21 @@ const Navbar = () => {
         {showMenu && (
           <div className="md:hidden items-center absolute top-16 right-0 ">
             <ul className="flex flex-col space-y-2 text-sm bg-blue-500">
-              <li>
-                <a href="#" className="text-white hover:text-blue-300">ABOUT US</a>
-              </li>
-              <li>
-                <a href="#" className="text-white hover:text-blue-300">SHOP</a>
-              </li>
-              <li>
-                <a href="#" className="text-white hover:text-blue-300">VISIT</a>
-              </li>
-              <li>
-                <a href="#" className="text-white hover:text-blue-300">GALLERY</a>
-              </li>
-              <li>
-                <a href="#" className="text-white hover:text-blue-300">CONTACT</a>
-              </li>
+                <li>
+                    <Link to="/" className="text-black hover:text-blue-300">ABOUT US</Link>
+                </li>
+                <li>
+                    <Link to="/" className="text-black hover:text-blue-300">SHOP</Link>
+                </li>
+                <li>
+                    <Link to="/" className="text-black hover:text-blue-300">VISIT</Link>
+                </li>
+                <li>
+                    <Link to="/" className="text-black hover:text-blue-300">GALLERY</Link>
+                </li>t
+                <li>
+                    <Link to="/" className="text-black hover:text-blue-300">CONTACT</Link>
+                </li>
             </ul>
           </div>
         )}

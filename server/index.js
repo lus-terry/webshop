@@ -7,6 +7,8 @@ const cookieParser = require("cookie-parser");
 const authRoute = require("./Routes/AuthRoute");
 const { userVerification } = require("./Middlewares/AuthMiddleware");
 
+const products= require("./products")
+
 dotenv.config();
 
 const MONGO_URL = process.env.MONGO_URL;
@@ -30,14 +32,27 @@ const corsOptions = {
   credentials: true,
 };
 app.use(cors(corsOptions));
-
 app.use(cookieParser());
 app.use(express.json());
 
+app.use("/", authRoute);
+
+//dostupno na localhost:4000/products
+
+app.get("/products", (req, res) => {
+  res.send(products);
+});
+
+
+/*
 // KORISTI userVerification KAO SREDNJI SLOJ (MIDDLEWARE) ZA ZAŠTITU RUTE /admin
 app.get("/admin", userVerification, (req, res) => {
   // Ovdje dodajte logiku za admin panel
   res.json({ message: "Admin panel" });
 });
 
-app.use("/", authRoute);
+
+
+
+*/
+

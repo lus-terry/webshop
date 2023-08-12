@@ -1,7 +1,7 @@
 import React from "react";
 
-const ProductCard = (props) => {
-  const { id, name, desc, price, image } = props;
+const ProductCardHomePage = (props) => {
+  const { id, name, shortDesc, price, image } = props;
 
   return (
     <div className="m-10 w-full max-w-xs overflow-hidden rounded-lg bg-white shadow-md">
@@ -69,4 +69,4 @@ const ProductCard = (props) => {
   );
 };
 
-export default ProductCard;
+export default ProductCardHomePage;
