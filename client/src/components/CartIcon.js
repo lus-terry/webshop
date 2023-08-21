@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CartIcon = () => {
+const CartIcon = ({ cartTotalQuantity }) => {
   return (
  
     <span className="relative">
@@ -14,7 +14,7 @@ const CartIcon = () => {
         </svg> 
         <span className="absolute top-1 right-0 flex items-center justify-center h-3.5 w-3.5 rounded-full bg-red-500 text-white pb-1 pl-0.5 "
             style={{ fontSize: '1rem', fontWeight: 100}}>
-             1
+             {cartTotalQuantity}
         </span>
     </span>
   );

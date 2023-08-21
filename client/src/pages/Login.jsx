@@ -4,6 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import '../index.css';
 
+
 const Login = () => {
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
@@ -27,6 +28,7 @@ const Login = () => {
     toast.success(msg, {
       position: "bottom-left",
     });
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -65,7 +67,7 @@ const Login = () => {
   };
 
   return (
-    <div className="login-page flex items-center justify-center min-h-screen" style={{ backgroundImage: `url(https://res.cloudinary.com/dnqsbxztj/image/upload/v1679954835/InSylvis/Untitled_design_xxfkzk.png)` }}>
+    <div className="login-page flex items-center justify-center h-screen" style={{ backgroundImage: `url(https://res.cloudinary.com/dnqsbxztj/image/upload/v1679954835/InSylvis/Untitled_design_xxfkzk.png)`, backgroundSize: 'cover' }}>
       <div className="form_container w-full max-w-md p-6 bg-white rounded-lg shadow-md">
         <h2 className="text-2xl mb-4">Login Account</h2>
         <form onSubmit={handleSubmit} className="space-y-4">

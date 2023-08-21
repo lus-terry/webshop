@@ -1,7 +1,23 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addToCart, getTotals } from "../features/cartSlice";
+import { productsApi, useGetAllProductsQuery } from "../features/productsApi";
 
-const ProductCard = (props) => {
-  const { id, name, desc, price, image } = props;
+
+
+
+const ProductCard = ({ product }) => {
+  const dispatch = useDispatch();
+
+
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+    dispatch(getTotals());
+
+  };
+
+  const {data, error, isLoading} = useGetAllProductsQuery();
 
   return (
     <div className="m-10 w-full max-w-xs overflow-hidden rounded-lg bg-white shadow-md">
@@ -9,8 +25,8 @@ const ProductCard = (props) => {
         <a href="#">
           <img
             className="h-60 rounded-t-lg object-cover"
-            src={image}
-            alt={name}
+            src={product.image}
+            alt={product.name}
           />
         </a>
         <span className="absolute top-0 left-0 w-28 translate-y-4 -translate-x-6 -rotate-45 bg-black text-center text-sm text-white">
@@ -20,7 +36,7 @@ const ProductCard = (props) => {
       <div className="mt-4 px-5 pb-5">
         <a href="#">
           <h5 className="text-xl font-semibold tracking-tight text-slate-900">
-            {name}
+            {product.name}
           </h5>
         </a>
         <div className="mt-2.5 mb-5 flex items-center">
@@ -40,8 +56,8 @@ const ProductCard = (props) => {
         </div>
         <div className="flex items-center justify-between">
           <p>
-            <span className="text-3xl font-bold text-slate-900">{price}</span>
-            <span className="text-sm text-slate-900 line-through">{price*2}</span>
+            <span className="text-3xl font-bold text-slate-900">{product.price}</span>
+            <span className="text-sm text-slate-900 line-through">{product.price*2}</span>
           </p>
           <a
             href="#"
@@ -61,7 +77,8 @@ const ProductCard = (props) => {
                 d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
               />
             </svg>
-            Add to cart
+            <button onClick={() => handleAddToCart(product)}>  Add to cart
+            </button>
           </a>
         </div>
       </div>

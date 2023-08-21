@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Login, Signup, Admin } from "./pages";
+import { Login, Signup, Admin, Shop, Cart} from "./pages";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-import Wines from "./pages/Wines";
+
 
 function App() {
   return (
@@ -13,7 +13,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/admin" element={<Admin />} />
-          <Route path="/wines" element={<Wines />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/cart" element={<Cart />} />
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </div>

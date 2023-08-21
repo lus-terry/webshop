@@ -28,18 +28,86 @@ html,
 body {
   height: 100%;
   width: 100%;
+  background: rgba(239,239,239,255);
  
 }
 
-body {
+
+
+
+.content_container {
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
   background: rgba(239,239,239,255);
   font-family: 'Playfair Display', serif;
   letter-spacing: 0.1em;
   font-weight: 550;
+  padding-top: 130px; /* Adjust this value as needed */
 
+  text-transform: uppercase;
+  font-size: 3rem;
+  flex-direction: column;
+  gap: 1rem;
+  /* Add any other styling you want for the content container */
+}
+
+.button {
+  transition-duration: 0.4s;
+  background-color: transparent;
+  color: black; 
+  border: 2px solid #4CAF50;
+  padding: 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-image: linear-gradient(to right, #4CAF50 0%, #4CAF50 0%);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+}
+
+.button:hover {
+  background-size: 100% 100%;
+  color: white;
+}
+
+
+
+
+
+.naslov {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(239,239,239,255);
+  font-family: 'Playfair Display';
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.obican_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(239,239,239,255);
+  font-family: 'Playfair Display';
+  font-weight: 500;
+  text-transform: lowercase;
+  font-size: 22px;
+}
+
+.razmaknut_text {
+ 
+  font-family: 'Playfair Display';
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 22px;
+  letter-spacing: 0.3rem;
 }
 
 
@@ -102,8 +170,7 @@ span a {
 .home_page {
   
   padding-top: 300px;
-  padding-top: 300px;
-  height: 100%; /* Postavljamo visinu na 100% kako bi div popunio cijelu visinu ekrana */
+   /* Postavljamo visinu na 100% kako bi div popunio cijelu visinu ekrana */
   width: 100%;
   background: rgba(239,239,239,255);
   color: black;
@@ -114,8 +181,44 @@ span a {
   font-size: 3rem;
   flex-direction: column;
   gap: 1rem;
+
+  /* Omogućujemo skrolanje ako sadržaj prelazi visinu ekrana */
+}
+
+.cart_page {
+  
+
+  padding-top: 150px;
+  height: 100%; /* Postavljamo visinu na 100% kako bi div popunio cijelu visinu ekrana */
+  width: 100%;
+  background: rgba(239,239,239,255);
+  color: black;
+  display: flex;
+
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  flex-direction: column;
+  gap: 1rem;
   z-index: -10;
   /* Omogućujemo skrolanje ako sadržaj prelazi visinu ekrana */
+}
+
+.cart_page button {
+  background-color: rgb(27, 73, 83);
+  color: #fff;
+  cursor: pointer;
+  padding: 1rem 3rem;
+  font-size: 2rem;
+  border-radius: 2rem;
+  transition: ease-in 0.3s;
+  border: none;
+
+}
+
+.cart_page button:hover {
+  background-color: rgba(0, 212, 255, 1);
+
 }
 
 .home_page span {
