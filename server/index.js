@@ -29,7 +29,7 @@ app.listen(PORT, () => {
 });
 
 const corsOptions = {
-  origin: "http://localhost:4000",
+  origin: "webshop-api-gilt.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 };
