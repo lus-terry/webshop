@@ -10,4 +10,4 @@ export const productsApi = createApi({
     }),
 });
 
-export const { useGetAllProductsQuery } = productsApi;
+export const { useGetAllProductsQuery } = productsApi; 

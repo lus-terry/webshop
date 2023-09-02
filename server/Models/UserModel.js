@@ -2,6 +2,11 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
 const userSchema = new mongoose.Schema({
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    default: mongoose.Types.ObjectId, // Automatski generiraj ObjectId
+    unique: true,
+  },
   email: {
     type: String,
     required: [true, "Your email address is required"],

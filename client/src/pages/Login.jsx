@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import '../index.css';
+import { Button } from "semantic-ui-react";
 
 
 const Login = () => {
@@ -41,14 +42,17 @@ const Login = () => {
         { withCredentials: true }
       );
       console.log(data);
-      const { success, message, role } = data; 
+      const { success, message, role, userId } = data; 
       
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
+
+          localStorage.setItem('role', role);
+  
       
           if (role) {
-            navigate("/admin"); 
+            navigate("/admin/summary"); 
           } else {
             navigate("/");
           }
@@ -67,9 +71,10 @@ const Login = () => {
   };
 
   return (
+    <>
     <div className="login-page flex items-center justify-center h-screen" style={{ backgroundImage: `url(https://res.cloudinary.com/dnqsbxztj/image/upload/v1679954835/InSylvis/Untitled_design_xxfkzk.png)`, backgroundSize: 'cover' }}>
       <div className="form_container w-full max-w-md p-6 bg-white rounded-lg shadow-md">
-        <h2 className="text-2xl mb-4">Login Account</h2>
+        <div className="text-2xl mb-4 text-center">Login Account</div>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="email" className="block font-medium text-gray-700">
@@ -81,7 +86,7 @@ const Login = () => {
               value={email}
               placeholder="Enter your email"
               onChange={handleOnChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="custom-input"
             />
           </div>
           <div>
@@ -94,22 +99,34 @@ const Login = () => {
               value={password}
               placeholder="Enter your password"
               onChange={handleOnChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="custom-input"
             />
           </div>
-          <button
-            type="submit"
-            className="w-full bg-indigo-600 text-white p-2 rounded-md hover:bg-indigo-700"
-          >
-            Submit
-          </button>
-          <span className="block text-center">
-            Already have an account? <Link to="/signup" className="text-indigo-500">Signup</Link>
+          <div className="items-center">
+            <button
+              type="submit"
+              className="submit_button"
+            >
+              Submit
+            </button>
+          </div>
+        
+         <div className="items-center">
+         
+         <span className="flex items-center justify-even gap-2">
+            <div>Don't have an account?</div><div className="p-1"><Link to="/signup" className="custom-details-color hover:font-bold">Signup</Link></div> 
           </span>
+         </div>
+         
+          
         </form>
+        
         <ToastContainer />
       </div>
+      
     </div>
+    
+    </>
   );
 };
 

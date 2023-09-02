@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import '../index.css';
+import { Button } from "semantic-ui-react";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -61,45 +62,64 @@ const Signup = () => {
 
   return (
     <div className="login-page flex items-center justify-center h-screen" style={{ backgroundImage: `url(https://res.cloudinary.com/dnqsbxztj/image/upload/v1679954835/InSylvis/Untitled_design_xxfkzk.png)`, backgroundSize: 'cover' }}>
-  
-    <div className="form_container">
-      <h2>Signup Account</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="form_container w-full max-w-md p-6 bg-white rounded-lg shadow-md">
+    <div className="text-2xl mb-4 text-center">Signup Account</div>
+      <form onSubmit={handleSubmit} className="space-y-4">
+      
         <div>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            placeholder="Enter your email"
-            onChange={handleOnChange}
-          />
+        <label htmlFor="email" className="block font-medium text-gray-700">
+              Email
+            </label>
+            <input
+              type="email"
+              name="email"
+              value={email}
+              placeholder="Enter your email"
+              onChange={handleOnChange}
+              className="custom-input"
+            />
         </div>
         <div>
-          <label htmlFor="email">Username</label>
-          <input
-            type="text"
+          <label htmlFor="email" className="block font-medium text-gray-700">
+              Username
+            </label>
+            <input
+               type="text"
             name="username"
             value={username}
             placeholder="Enter your username"
-            onChange={handleOnChange}
-          />
+              onChange={handleOnChange}
+              className="custom-input"
+            />
         </div>
         <div>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            placeholder="Enter your password"
-            onChange={handleOnChange}
-          />
+        <label htmlFor="password" className="block font-medium text-gray-700">
+              Password
+            </label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              placeholder="Enter your password"
+              onChange={handleOnChange}
+              className="custom-input"
+            />
         </div>
-        <button type="submit">Submit</button>
-        <span>
-          Already have an account? <Link to={"/login"}>Login</Link>
-        </span>
-      </form>
+        <div className="items-center">
+            <Button
+              type="submit"
+              className="submit_button"
+            >
+              Submit
+            </Button>
+          </div>
+         <div className="items-center">
+         <span className="flex items-center justify-even gap-2">
+            <div>Already have an account?</div><div className="p-1"><Link to="/login" className="custom-details-color hover:font-bold">Login</Link></div> 
+          </span>
+         </div>
+          
+        </form>
       <ToastContainer />
     </div>
     </div>

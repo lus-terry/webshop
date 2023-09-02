@@ -15,7 +15,7 @@ const cartSlice = createSlice({
     reducers: {
         addToCart(state, action) {
             const itemIndex = state.cartItems.findIndex(
-                (item) => item.id === action.payload.id
+                (item) => item._id === action.payload._id
             );
             
             //ako već imamo taj item samo povećavamo njegov quantity
@@ -39,7 +39,7 @@ const cartSlice = createSlice({
         },
         removeFromCart(state, action) {
             const nextCartItems = state.cartItems.filter(
-                cartItemn => cartItemn.id !== action.payload.id
+                cartItem => cartItem._id !== action.payload._id
             )
             state.cartItems = nextCartItems;
             localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
@@ -50,7 +50,7 @@ const cartSlice = createSlice({
         },
         decreaseCart(state, action) {
             const itemIndex = state.cartItems.findIndex(
-                cartItemn => cartItemn.id === action.payload.id
+                cartItem => cartItem._id === action.payload._id
             );
 
             if(state.cartItems[itemIndex].cartTotalQuantity > 1) {
@@ -65,7 +65,7 @@ const cartSlice = createSlice({
                 
 
                 const nextCartItems = state.cartItems.filter(
-                    cartItemn => cartItemn.id !== action.payload.id
+                    cartItem => cartItem._id !== action.payload._id
                 )
                 state.cartItems = nextCartItems;
     
