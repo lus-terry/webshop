@@ -1,9 +1,8 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import '../index.css';
-import { Button } from "semantic-ui-react";
 
 
 const Login = () => {

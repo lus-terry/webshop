@@ -1,9 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addToCart, getTotals } from "../features/cartSlice";
-import { productsApi, useGetAllProductsQuery } from "../features/productsApi";
 import { Button } from "semantic-ui-react";
-import CartIcon from "./CartIcon";
+import { addToCart, getTotals } from "../features/cartSlice";
+import { useGetAllProductsQuery } from "../features/productsApi";
 import CartIconSimple from "./CartIconSimple";
 
 
