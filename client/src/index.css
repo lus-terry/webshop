@@ -1,3 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/*Playfair Display font*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+/*Open Sans font*/ 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
 *,
 ::before,
 ::after {
@@ -5,6 +16,8 @@
   padding: 0;
   margin: 0;
 }
+
+
 
 label {
   font-size: 1.2rem;
@@ -15,34 +28,231 @@ html,
 body {
   height: 100%;
   width: 100%;
+  background: #f6efe7;
+ 
 }
 
-body {
+
+
+.custom-text-color {
+  color: #f6efe7;
+}
+.custom-bg-color {
+  background-color: #f6efe7;
+}
+.custom-details-color {
+  color: #657140;
+}
+
+
+
+
+  .content_container {
+    background-image: url('https://res.cloudinary.com/lus-terry/image/upload/v1693071076/Navbar_2_x3fxpd.png');
+    background-size: 100% auto; 
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding-top: -60px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+   
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.1em;
+    font-weight: 550;
+    padding-top: 220px; /* Adjust this value as needed */
+    text-transform: uppercase;
+    font-size: 3rem;
+    flex-direction: column;
+    gap: 1rem;
+    /* Add any other styling you want for the content container */
+  }
+
+
+  
+
+
+  .content_container_normal {
+    display: flex;
+    width: 100%;
+
+    justify-content: center;
+    align-items: center;
+    background: #f6efe7;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.1em;
+    font-weight: 550;
+    padding-top: 130px; /* Adjust this value as needed */
+  
+    text-transform: uppercase;
+    font-size: 3rem;
+    flex-direction: column;
+    gap: 1rem;
+    /* Add any other styling you want for the content container */
+  }
+  
+
+
+
+
+
+.content_container_admin {
+  display: flex;
+  width: calc(100% - 8%);
+  margin-left: 8%; 
+  justify-content: center;
+  align-items: center;
+  background: #f6efe7;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.1em;
+  font-weight: 550;
+  padding-top: 130px; /* Adjust this value as needed */
+
+  text-transform: uppercase;
+  font-size: 3rem;
+  flex-direction: column;
+  gap: 1rem;
+  /* Add any other styling you want for the content container */
+}
+
+.button {
+  transition-duration: 0.4s;
+  background-color: transparent;
+  color: black;
+  border: 2px solid #657140;
+  padding: 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-image: linear-gradient(to right, #657140 0%, #657140 0%);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  width: 150px;
+}
+
+
+
+
+.button:hover {
+  background-size: 100% 100%;
+  color: white;
+}
+
+
+.button_special {
+  transition-duration: 0.4s;
+  background-color: #657140;
+  color: black;
+  border: 2px solid #657140;
+  padding: 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-image: linear-gradient(to right, #f6efe7 0%, #f6efe7 0%);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  width: 150px;
+}
+
+
+
+
+.button_special:hover {
+  background-size: 100% 100%;
+  color: black;
+  border: 2px solid #f6efe7;
+}
+
+
+.submit_button {
+  transition-duration: 0.4s;
+  background-color: transparent;
+  color: black;
+  border: 2px solid #657140;
+  padding: 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-image: linear-gradient(to right, #657140 0%, #657140 0%);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  width: 150px;
+}
+
+
+
+
+.submit_button:hover {
+  background-size: 100% 100%;
+  background-color: #657140;
+  color: white;
+}
+
+
+
+
+
+
+
+
+.naslov {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(143, 187, 204, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
-  );
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: transparent;
+  font-family: 'Playfair Display';
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  font-size: 2rem;
 }
 
+.obican_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  font-family: 'Playfair Display';
+  font-weight: 500;
+  text-transform: lowercase;
+  font-size: 22px;
+}
+
+.razmaknut_text {
+ 
+  font-family: 'Playfair Display';
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 22px;
+  letter-spacing: 0.3rem;
+}
+
+
+
 .form_container {
-  background-color: #fff;
+  background-color: #f6efe7;
   padding: 2rem 3rem;
   border-radius: 0.5rem;
   width: 100%;
   max-width: 400px;
-  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px 0px #657140;
 }
 
 .form_container > h2 {
   margin-block: 1rem;
   padding-block: 0.6rem;
-  color: rgba(0, 212, 255, 1);
+  color: black;
 }
 
 .form_container > form {
@@ -70,26 +280,60 @@ body {
   font-style: italic;
 }
 
-.form_container button {
-  background-color: rgba(0, 212, 255, 1);
-  color: #fff;
-  border: none;
-  padding: 0.6rem;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 0.3rem;
+
+.form_container_checkout {
+  background-color: #f6efe7;
+  padding: 2rem 3rem;
+  border-radius: 0.5rem;
+  width: 100%;
+
+  box-shadow: 8px 8px 24px 0px #657140;
 }
+
+.form_container_checkout > h2 {
+  margin-block: 1rem;
+  padding-block: 0.6rem;
+  color: black;
+}
+
+.form_container_checkout > form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.form_container_checkout div {
+  display: flex;
+
+  gap: 0.3rem;
+}
+
+.form_container_checkout input {
+  border: none;
+  padding: 0.5rem;
+  border-bottom: 1px solid gray;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.form_container_checkout input::placeholder {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
 
 span a {
   text-decoration: none;
-  color: rgba(0, 212, 255, 1);
+  color: #657140;
 }
 
 .home_page {
-  height: 100vh;
-  width: 100vw;
-  background: #000;
-  color: white;
+  
+  padding-top: 300px;
+   /* Postavljamo visinu na 100% kako bi div popunio cijelu visinu ekrana */
+  width: 100%;
+  background: rgba(239,239,239,255);
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,30 +341,97 @@ span a {
   font-size: 3rem;
   flex-direction: column;
   gap: 1rem;
+
+  /* Omogućujemo skrolanje ako sadržaj prelazi visinu ekrana */
 }
 
-.home_page span {
-  color: rgba(0, 212, 255, 1);
-}
+.cart_page {
+  
 
-.home_page button {
-  background-color: rgb(27, 73, 83);
-  color: #fff;
-  cursor: pointer;
-  padding: 1rem 3rem;
+  padding-top: 150px;
+  height: 100%; /* Postavljamo visinu na 100% kako bi div popunio cijelu visinu ekrana */
+  width: 100%;
+  background: #f6efe7;
+  color: black;
+  display: flex;
+
+  align-items: center;
+  text-transform: uppercase;
   font-size: 2rem;
-  border-radius: 2rem;
-  transition: ease-in 0.3s;
-  border: none;
-}
-
-.home_page button:hover {
-  background-color: rgba(0, 212, 255, 1);
+  flex-direction: column;
+  gap: 1rem;
+  z-index: -10;
+  /* Omogućujemo skrolanje ako sadržaj prelazi visinu ekrana */
 }
 
 
-@media only screen and (max-width: 1200px){
-  .home_page{
+
+
+.parent_div {
+  margin-top: 350px;
+  height: 100%; /* Visina roditeljskog div-a je postavljena na 100% visine ekrana */
+  width: 80%;
+ 
+  flex-direction: column;
+}
+
+.child_div {
+  height: 500px; /* Fiksna visina dece div-ova */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6efe7;
+  padding-bottom: 10px;
+
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  overflow: hidden;
+  
+}
+
+.not-found{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(68, 68, 68);
+  min-height: 80vh;
+
+}
+
+.custom-input {
+  margin-top: 1rem;
+  display: block;
+  width: 100%;
+  border-radius: 0.375rem; 
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
+
+
+ 
+}
+
+.custom-input:hover{
+
+  outline: none;
+  border-color: #657140;
+  box-shadow: 0 0 2px #657140;
+
+}
+
+.custom-input:focus{
+
+  outline: none;
+  border-color: #657140;
+  box-shadow: 0 0 5px #657140;
+
+}
+
+
+
+
+@media only screen and (max-width: 1200px) {
+  .home_page {
     font-size: 1.5rem;
   }
   .home_page button {

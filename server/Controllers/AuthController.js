@@ -24,9 +24,10 @@ module.exports.Signup = async (req, res, next) => {
   }
 }
 
+
 module.exports.Login = async (req, res, next) => {
   try {
-    const { email, password } = req.body;
+    const { email, password} = req.body;
     if(!email || !password ){
       return res.json({message:'All fields are required'})
     }
@@ -38,14 +39,17 @@ module.exports.Login = async (req, res, next) => {
     if (!auth) {
       return res.json({message:'Incorrect password or email' }) 
     }
+
+    const { role } = user;
+
      const token = createSecretToken(user._id);
      res.cookie("token", token, {
        withCredentials: true,
        httpOnly: false,
      });
-     res.status(201).json({ message: "User logged in successfully", success: true });
+     res.status(201).json({ message: "User logged in successfully", success: true, role });
      next()
   } catch (error) {
     console.error(error);
   }
-};
+}
