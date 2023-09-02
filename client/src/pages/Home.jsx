@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useCookies } from "react-cookie";
 import axios from "axios";
-import { toast } from "react-toastify";
-import Navbar from '../components/Navbar';
-import 'tailwindcss/tailwind.css'; 
-import '../index.css';
-import ProductCard from "../components/ProductCard";
-import { useGetAllProductsQuery } from "../features/productsApi";
-import text from "../components/Texts"
+import React, { useEffect, useState } from "react";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 import { Button } from "semantic-ui-react";
+import 'tailwindcss/tailwind.css';
+import Navbar from '../components/Navbar';
 import ProductCardHomePage from "../components/ProductCardHomePage";
-import { useSelector } from "react-redux";
+import text from "../components/Texts";
+import { useGetAllProductsQuery } from "../features/productsApi";
+import '../index.css';
 
 
 

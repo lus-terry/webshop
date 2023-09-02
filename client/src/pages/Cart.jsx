@@ -1,11 +1,10 @@
-import {  useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import { useSelector, useDispatch } from "react-redux";
 
-import { Button, Sidebar } from "semantic-ui-react";
-import { addToCart, clearCart, decreaseCart, getTotals, removeFromCart } from "../features/cartSlice";
 import { useEffect } from "react";
-import PayButton from "../components/PayButton";
+import { Button } from "semantic-ui-react";
+import { addToCart, clearCart, decreaseCart, getTotals, removeFromCart } from "../features/cartSlice";
 
 
 

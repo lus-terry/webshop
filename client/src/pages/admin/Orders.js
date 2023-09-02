@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios"; // You may need to install axios if not already installed
+import React, { useEffect } from "react";
 
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllOrders } from '../../features/CheckoutSlice';

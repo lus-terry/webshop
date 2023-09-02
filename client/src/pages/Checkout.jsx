@@ -1,13 +1,13 @@
-import { Link, useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import '../index.css';
+import Navbar from "../components/Navbar";
 import SmallCart from "../components/SmallCart";
-import { useSelector, useDispatch } from "react-redux";
-import { createOrder } from "../features/CheckoutSlice"; 
-import axios from "axios";
+import { createOrder } from "../features/CheckoutSlice";
+import '../index.css';
 
 
 const Checkout = () => {
