@@ -14,7 +14,8 @@ Zadatak Razviti web aplikaciju za prodaju proizvoda iz odabranog OPG-a. Aplikaci
    `https://github.com/lus-terry/webshop.git`
 
 3) Open this folder in Visual Studio Code (or some other editor) and in Terminal run the following command to install the dependencies required for the project:
-   npm install
+
+   `npm install`
 
 
    In case of issues shown after the npm install, run the below to automatically fix the issues:
@@ -27,7 +28,7 @@ Zadatak Razviti web aplikaciju za prodaju proizvoda iz odabranog OPG-a. Aplikaci
    and run it:
    `npm start`
 
-6) Open new terminal and navigate to the client using this command:
+6) Open another terminal and navigate to the client using this command:
    `cd client`
 
    then:
@@ -44,9 +45,9 @@ Open:
 
  #login and signup
 
-register to get inside user view of web shop
+register to get inside user view of Webshop
 
-use these credentials to enter the admin page:
+use these credentials to enter the Admin page:
 
    USRENAME: admin@gmail.com
    PASSWORD: admin
