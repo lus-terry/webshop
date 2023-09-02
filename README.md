@@ -21,13 +21,13 @@ Zadatak Razviti web aplikaciju za prodaju proizvoda iz odabranog OPG-a. Aplikaci
 
    `npm audit fix`
 
-5) Navigate to server using this command:
+5) Navigate to the server using this command:
    `cd server`
 
    and run it:
    `npm start`
 
-6) Open new terminal and navigate to client using this command:
+6) Open new terminal and navigate to the client using this command:
    `cd client`
 
    then:
@@ -41,6 +41,15 @@ Open:
 
  [localhost:3000](http://localhost:3000) in your browser.
 
+
+ #login and signup
+
+register to get inside user view of web shop
+
+use these credentials to enter the admin page:
+
+   USRENAME: admin@gmail.com
+   PASSWORD: admin
 
 
 
